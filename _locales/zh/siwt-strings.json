@@ -1,0 +1,39 @@
+{
+  "siwt_显示类.initRGBLight|block": "初始化RGB",
+  "siwt_显示类.setPixelRGB|block":"设置|%lightoffset|颜色为 %rgb",
+  "siwt_显示类.setPixelRGBArgs|block":"设置|%lightoffset|颜色为 %rgb",
+  "siwt_显示类.showLight|block":"显示彩灯",
+  "siwt_显示类.clearLight|block":"关闭彩灯",
+  "siwt_显示类.setBrightness|block":"设置RGB灯亮度 %brightness",
+  "siwt_显示类.SevenColorLED|block":"APP彩灯设置 %uartData",
+  
+  "siwt_传感器类.Voice_Sensor|block": "声音传感器|返回 %value",
+  "siwt_传感器类.checkCurrentColor|block": "检测颜色是否是 %color",
+  "siwt_传感器类.initColorSensor|block": "颜色传感器初始化",
+  "siwt_传感器类.Photosensitive_Sensor|block": "光敏传感器|%value|光照",
+  "siwt_传感器类.Incline_Sensor|block": "倾斜传感器|%value|倾斜",
+  "siwt_传感器类.Flame_Sensor|block": "火焰传感器|%value|火焰",
+  "siwt_传感器类.Smog_Sensor|block": "烟雾传感器|%value|烟雾",
+  "siwt_传感器类.Touch_Sensor|block": "触摸传感器|%value|触摸",
+  "siwt_传感器类.Humidity_Sensor|block": "湿度传感器检测到土壤湿度|%value",
+  
+  "siwt_音乐类.Buzzer|block": "有源蜂鸣器|值 %value",
+  "siwt_音乐类.BluetoothMusic|block": "APP音乐播放%uartData",
+  
+  "siwt_电机类.Vibrator_Open|block": "开始震动",
+  "siwt_电机类.Vibrator_Close|block": "停止震动",
+  
+  
+  "siwt_小车类.Ultrasonic_Car|block": "超声波返回（cm）",
+  "siwt_小车类.Music_Car|block": "小车音乐播放|%index",
+  "siwt_小车类.Line_Sensor|block": "巡线传感器|位置 %direct|检测到 %value",
+  "siwt_小车类.Avoid_Sensor|block": "红外避障传感器|检测到 %value|障碍物",
+  "siwt_小车类.Servo_Car|block": "小车舵机|编号 %num|角度 %value|速度 %speed",
+  "siwt_小车类.CarCtrl|block": "小车控制|%index",
+  "siwt_小车类.CarCtrlSpeed|block": "小车控制|%index|速度 %speed",
+  "siwt_小车类.BluetoothCarControl|block": "APP小车运动控制%uartData",
+  "siwt_小车类.BluetoothModeSelect|block": "APP小车模式选择%uartData返回类型",
+  "siwt_小车类.BluetoothServoControl|block": "APP舵机控制%uartData",
+  "siwt_小车类.MotorRun|block": "电机控制|%index0|%index1|速度%speed"
+}
+
