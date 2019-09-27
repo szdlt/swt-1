@@ -13,7 +13,7 @@
   "siwt_传感器类.Photosensitive_Sensor|block": "光敏传感器|%value|光照",
   "siwt_传感器类.Incline_Sensor|block": "倾斜传感器|%value|倾斜",
   "siwt_传感器类.Flame_Sensor|block": "火焰传感器|%value|火焰",
-  "siwt_传感器类.Smog_Sensor|block": "烟雾传感器|%value|烟雾",
+  "siwt_传感器类.Smog_Sensor|block": "可燃气体传感器|%value|可燃气体",
   "siwt_传感器类.Touch_Sensor|block": "触摸传感器|%value|触摸",
   "siwt_传感器类.Humidity_Sensor|block": "湿度传感器检测到土壤湿度|%value",
   
