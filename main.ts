@@ -1,4 +1,4 @@
-/*  2019.0812.10:31
+/*  2019.1115.18:43
 modified from duncan
 load dependency
 "siwt": "file:../pxt-siwt"
@@ -101,6 +101,13 @@ namespace siwt_传感器类 {
         //% blockId="NoVoice" block="无声音"
         NoVoice = 1
     }
+	 export enum enKey {
+        //% blockId="Press" block="按下"
+        Press = 0,
+        //% blockId="Release" block="松开"
+        Release = 1
+    }
+	
     export enum enIR {
         //% blockId="Get" block="检测到"
         Get = 0,
@@ -422,12 +429,26 @@ namespace siwt_传感器类 {
     //% color="#87CEEB"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Voice_Sensor(value: enVoice): boolean {
-        pins.setPull(DigitalPin.P3, PinPullMode.PullUp);
-        if (pins.digitalReadPin(DigitalPin.P3) == value) {
+        pins.setPull(DigitalPin.P4, PinPullMode.PullUp);
+        if (pins.digitalReadPin(DigitalPin.P4) == value) {
             return true;
         }
         else {
             return false;
+        }
+    }
+	//% blockId=siwt_Key_Sensor block="Key_Sensor|value %value|按键"
+    //% weight=100
+    //% blockGap=10
+    //% color="#87CEEB"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function Key_Sensor(value: enKey): boolean {
+        pins.setPull(DigitalPin.P16, PinPullMode.PullUp);
+        if (pins.digitalReadPin(DigitalPin.P16) == value) {
+            return false;
+        }
+        else {
+            return true;
         }
     }
     //% blockId=siwt_Incline_Sensor block="Incline_Sensor|%value|倾斜"
@@ -436,9 +457,9 @@ namespace siwt_传感器类 {
     //% color="#87CEEB"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Incline_Sensor(value: enIR): boolean {
-        pins.setPull(DigitalPin.P9, PinPullMode.PullUp);
+        pins.setPull(DigitalPin.P6, PinPullMode.PullUp);
         //IR_send_38k();
-        if (pins.digitalReadPin(DigitalPin.P9) == value) {
+        if (pins.digitalReadPin(DigitalPin.P6) == value) {
             return true;
         }
         else {
@@ -451,8 +472,8 @@ namespace siwt_传感器类 {
     //% color="#87CEEB"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Smog_Sensor(value: enIR): boolean {
-        pins.setPull(DigitalPin.P3, PinPullMode.PullUp);
-        if (pins.digitalReadPin(DigitalPin.P3) == value) {
+        pins.setPull(DigitalPin.P4, PinPullMode.PullUp);
+        if (pins.digitalReadPin(DigitalPin.P4) == value) {
             return true;
         }
         else {
@@ -465,8 +486,8 @@ namespace siwt_传感器类 {
     //% color="#87CEEB"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Humidity_Sensor(value: enOK): boolean {
-        pins.setPull(DigitalPin.P3, PinPullMode.PullUp);
-        if (pins.digitalReadPin(DigitalPin.P3) == value) {
+        pins.setPull(DigitalPin.P8, PinPullMode.PullUp);
+        if (pins.digitalReadPin(DigitalPin.P8) == value) {
             return false;
         }
         else {
@@ -479,8 +500,8 @@ namespace siwt_传感器类 {
     //% color="#87CEEB"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Touch_Sensor(value: enIR): boolean {
-        pins.setPull(DigitalPin.P9, PinPullMode.PullUp);
-        if (pins.digitalReadPin(DigitalPin.P9) == value) {
+        pins.setPull(DigitalPin.P6, PinPullMode.PullUp);
+        if (pins.digitalReadPin(DigitalPin.P6) == value) {
             return false;
         }
         else {
@@ -494,8 +515,8 @@ namespace siwt_传感器类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Photosensitive_Sensor(value: enIR): boolean {
 
-        pins.setPull(DigitalPin.P8, PinPullMode.PullUp);
-        if (pins.digitalReadPin(DigitalPin.P8) == value) {
+        pins.setPull(DigitalPin.P4, PinPullMode.PullUp);
+        if (pins.digitalReadPin(DigitalPin.P4) == value) {
             return true;
         }
         else {
@@ -709,9 +730,7 @@ namespace siwt_小车类 {
         S1 = 1,
         S2,
         S3,
-        S4,
-        S5,
-        S6
+        S4  
     }
     export enum CarRunState {
         //% blockId="Car_Normal" block="正常"
@@ -785,8 +804,8 @@ namespace siwt_小车类 {
         let servo2 = 0
         let servo3 = 0
         let servo4 = 0
-        let servo6 = 0
-        let servo5 = 0
+   //     let servo6 = 0
+   //     let servo5 = 0
         let index = 0
         if (uartData.indexOf("*1-") != -1) {
             index = uartData.indexOf("*1-");
@@ -808,16 +827,7 @@ namespace siwt_小车类 {
             servo4 = parseInt(uartData.substr(3, uartData.length - 3))
             Servo_Car(enServo.S4, servo4, 0)
         }
-        else if (uartData.indexOf("*5-") != -1) {
-            index = uartData.indexOf("*5-");
-            servo5 = parseInt(uartData.substr(3, uartData.length - 3))
-            Servo_Car(enServo.S5, servo5, 0)
-        }
-        else if (uartData.indexOf("*6-") != -1) {
-            index = uartData.indexOf("*6-");
-            servo6 = parseInt(uartData.substr(3, uartData.length - 3))
-            Servo_Car(enServo.S6, servo6, 0)
-        }
+       
     }
     //% blockId=siwt_BluetoothModeSelect block="BluetoothModeSelect|%uartData"
     //% weight=92
@@ -882,8 +892,6 @@ namespace siwt_小车类 {
         if (!initialized) {
             initPCA9685();
         }
-        if (channel < 9 && channel > 5)
-            channel += 3;
         let buf = pins.createBuffer(5);
         buf[0] = LED0_ON_L + 4 * channel;
         buf[1] = on & 0xff;
@@ -1089,10 +1097,7 @@ namespace siwt_小车类 {
         else if (num == 2) { value_past = value2_past; }
         else if (num == 3) { value_past = value3_past; }
         else if (num == 4) { value_past = value4_past; }
-        else if (num == 5) { value_past = value5_past; }
-        else if (num == 6) { value_past = value6_past; }
-
-
+    
         while (value_past != value) {
             if (speed == 0 || value_past == -1) {
                 value_past = value;
@@ -1127,8 +1132,6 @@ namespace siwt_小车类 {
         else if (num == 2) { value2_past = value; }
         else if (num == 3) { value3_past = value; }
         else if (num == 4) { value4_past = value; }
-        else if (num == 5) { value5_past = value; }
-        else if (num == 6) { value6_past = value; }
     }
     //% blockId=siwt_Avoid_Sensor block="Avoid_Sensor|value %value"
     //% weight=95
@@ -1137,32 +1140,30 @@ namespace siwt_小车类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function Avoid_Sensor(value: enAvoidState): boolean {
         let temp: boolean = false;
-        //     pins.digitalWritePin(DigitalPin.P9, 0);
         switch (value) {
             case enAvoidState.OBSTACLE: {
-                if (pins.analogReadPin(AnalogPin.P1) < 800) {
+                if (pins.analogReadPin(AnalogPin.P2) < 800) {
                     temp = true;
-                    //   setPwm(8, 0, 0);
+                   
                 }
                 else {
                     temp = false;
-                    //     setPwm(8, 0, 4095);
+                   
                 }
                 break;
             }
             case enAvoidState.NOOBSTACLE: {
-                if (pins.analogReadPin(AnalogPin.P1) > 800) {
+                if (pins.analogReadPin(AnalogPin.P2) > 800) {
                     temp = true;
-                    //     setPwm(8, 0, 4095);
+                   
                 }
                 else {
                     temp = false;
-                    //    setPwm(8, 0, 0);
+                   
                 }
                 break;
             }
         }
-        //    pins.digitalWritePin(DigitalPin.P9, 1);
         return temp;
     }
     //% blockId=siwt_Line_Sensor block="Line_Sensor|direct %direct|value %value"
@@ -1174,32 +1175,28 @@ namespace siwt_小车类 {
         let temp: boolean = false;
         switch (direct) {
             case enPos.LeftState: {
-                if (pins.analogReadPin(AnalogPin.P2) < 500) {
+                if (pins.analogReadPin(AnalogPin.P1) < 500) {
                     if (value == enLineState.White) {
                         temp = true;
-                    }
-                    setPwm(7, 0, 4095);
+                    }                 
                 }
                 else {
                     if (value == enLineState.Black) {
                         temp = true;
-                    }
-                    setPwm(7, 0, 0);
+                    }               
                 }
                 break;
             }
             case enPos.RightState: {
-                if (pins.analogReadPin(AnalogPin.P1) < 500) {
+                if (pins.analogReadPin(AnalogPin.P2) < 500) {
                     if (value == enLineState.White) {
                         temp = true;
-                    }
-                    setPwm(6, 0, 4095);
+                    }                  
                 }
                 else {
                     if (value == enLineState.Black) {
                         temp = true;
-                    }
-                    setPwm(6, 0, 0);
+                    } 
                 }
                 break;
             }
