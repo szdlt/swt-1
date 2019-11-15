@@ -8,6 +8,7 @@
   "siwt_显示类.SevenColorLED|block":"APP彩灯设置 %uartData",
   
   "siwt_传感器类.Voice_Sensor|block": "声音传感器|返回 %value",
+  "siwt_传感器类.Key_Sensor|block": "按键状态|返回 %value",
   "siwt_传感器类.checkCurrentColor|block": "检测颜色是否是 %color",
   "siwt_传感器类.initColorSensor|block": "颜色传感器初始化",
   "siwt_传感器类.Photosensitive_Sensor|block": "光敏传感器|%value|光照",
