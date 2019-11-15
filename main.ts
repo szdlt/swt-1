@@ -429,7 +429,9 @@ namespace siwt_传感器类 {
     //% color="#87CEEB"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Voice_Sensor(value: enVoice): boolean {
+		
         pins.setPull(DigitalPin.P9, PinPullMode.PullUp);
+		pins.digitalWritePin(DigitalPin.P9, 1);
         if (pins.digitalReadPin(DigitalPin.P9) == value) {
             return true;
         }
@@ -473,6 +475,7 @@ namespace siwt_传感器类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Smog_Sensor(value: enIR): boolean {
         pins.setPull(DigitalPin.P9, PinPullMode.PullUp);
+		pins.digitalWritePin(DigitalPin.P9, 1);
         if (pins.digitalReadPin(DigitalPin.P9) == value) {
             return true;
         }
@@ -516,6 +519,7 @@ namespace siwt_传感器类 {
     export function Photosensitive_Sensor(value: enIR): boolean {
 
         pins.setPull(DigitalPin.P9, PinPullMode.PullUp);
+		pins.digitalWritePin(DigitalPin.P9, 1);
         if (pins.digitalReadPin(DigitalPin.P9) == value) {
             return true;
         }
