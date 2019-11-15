@@ -429,8 +429,8 @@ namespace siwt_传感器类 {
     //% color="#87CEEB"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Voice_Sensor(value: enVoice): boolean {
-        pins.setPull(DigitalPin.P4, PinPullMode.PullUp);
-        if (pins.digitalReadPin(DigitalPin.P4) == value) {
+        pins.setPull(DigitalPin.P9, PinPullMode.PullUp);
+        if (pins.digitalReadPin(DigitalPin.P9) == value) {
             return true;
         }
         else {
@@ -457,9 +457,9 @@ namespace siwt_传感器类 {
     //% color="#87CEEB"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Incline_Sensor(value: enIR): boolean {
-        pins.setPull(DigitalPin.P6, PinPullMode.PullUp);
+        pins.setPull(DigitalPin.P14, PinPullMode.PullUp);
         //IR_send_38k();
-        if (pins.digitalReadPin(DigitalPin.P6) == value) {
+        if (pins.digitalReadPin(DigitalPin.P14) == value) {
             return true;
         }
         else {
@@ -472,8 +472,8 @@ namespace siwt_传感器类 {
     //% color="#87CEEB"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Smog_Sensor(value: enIR): boolean {
-        pins.setPull(DigitalPin.P4, PinPullMode.PullUp);
-        if (pins.digitalReadPin(DigitalPin.P4) == value) {
+        pins.setPull(DigitalPin.P9, PinPullMode.PullUp);
+        if (pins.digitalReadPin(DigitalPin.P9) == value) {
             return true;
         }
         else {
@@ -515,8 +515,8 @@ namespace siwt_传感器类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Photosensitive_Sensor(value: enIR): boolean {
 
-        pins.setPull(DigitalPin.P4, PinPullMode.PullUp);
-        if (pins.digitalReadPin(DigitalPin.P4) == value) {
+        pins.setPull(DigitalPin.P9, PinPullMode.PullUp);
+        if (pins.digitalReadPin(DigitalPin.P9) == value) {
             return true;
         }
         else {
