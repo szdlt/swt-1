@@ -870,7 +870,7 @@ namespace siwt_小车类 {
     }
     function initPCA9685(): void {
         i2cwrite_(PCA9685_ADD, MODE1, 0x00)
-        setFreq(50);
+        setFreq(47);
         initialized = true
     }
     function setFreq(freq: number): void {
