@@ -1,7 +1,7 @@
 {
-    "name": "siwt",
-    "version": "1.0.0",
-    "description": "Extension for Siwutian",
+    "name": "Siwt2.1",
+    "version": "2.1.0",
+    "description": "Extension for Siwt V2.1 board",
     "license": "MIT",
     "dependencies": {
         "core": "*"
@@ -9,7 +9,7 @@
     "files": [
         "README.md",
         "main.ts",
-        "QbitRGBLight.ts",
+        "SwitRGBLight.ts",
         "sendbuffer.asm",
         "_locales/zh/siwt-strings.json"
     ],
