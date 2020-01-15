@@ -1,6 +1,6 @@
-# siwt
+# Siwt2.1
 
-Extension for siwt
+Extension for Siwt v2.1 board
 
 ## License
 
