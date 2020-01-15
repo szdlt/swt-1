@@ -11,7 +11,7 @@
         "main.ts",
         "SwitRGBLight.ts",
         "sendbuffer.asm",
-        "_locales/zh/siwt-strings.json"
+        "_locales/zh/Siwt21-strings.json"
     ],
     "testFiles": [
         "test.ts"
