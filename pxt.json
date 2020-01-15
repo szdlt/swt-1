@@ -1,6 +1,6 @@
 {
-    "name": "Siwt2.1",
-    "version": "2.1.0",
+    "name": "Siwt21",
+    "version": "2.1",
     "description": "Extension for Siwt V2.1 board",
     "license": "MIT",
     "dependencies": {
