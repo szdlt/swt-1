@@ -1,4 +1,4 @@
-# Siwt2.1
+# Siwt21
 
 Extension for Siwt v2.1 board
 
