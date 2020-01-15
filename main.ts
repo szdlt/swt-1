@@ -1,10 +1,10 @@
 /*  2019.1115.18:43
 modified from duncan
 load dependency
-"Siwt2.1": "file:../pxt-Siwt2.1"
+"Siwt21": "file:../pxt-Siwt21"
 */
 //% color="#C814B8" weight=25 icon="\uf1d4"
-namespace Siwt2.1_显示类 {
+namespace Siwt21_显示类 {
     let lhRGBLight: SiwtRGBLight.LHSiwtRGBLight;
     //% blockId="initRGBLight" block="initRGBLight before use"
     //% weight=94
@@ -14,7 +14,7 @@ namespace Siwt2.1_显示类 {
         }
         clearLight();
     }
-    //% blockId=Siwt2.1_SevenColorLED block="SevenColorLED|%uartData"
+    //% blockId=Siwt21_SevenColorLED block="SevenColorLED|%uartData"
     //% weight=93
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
@@ -94,7 +94,7 @@ namespace Siwt2.1_显示类 {
 }
 
 //% color="#87CEEB" weight=24 icon="\uf1b6"
-namespace Siwt2.1_传感器类 {
+namespace Siwt21_传感器类 {
     export enum enVoice {
         //% blockId="Voice" block="有声音"
         Voice = 0,
@@ -355,7 +355,7 @@ namespace Siwt2.1_传感器类 {
         val = val + val_byte << 8;
         return val;
     }
-    //% blockId=Siwt2.1_initColorSensor block="initColorSensor|value %value"
+    //% blockId=Siwt21_initColorSensor block="initColorSensor|value %value"
     //% weight=95
     //% blockGap=10
     //% color="#87CEEB"
@@ -368,7 +368,7 @@ namespace Siwt2.1_传感器类 {
     /*
  *  Color sensor to obtain color value.
  */
-    //% weight=84 blockId=Siwt2.1_checkCurrentColor block="checkCurrentColor|color %color" 
+    //% weight=84 blockId=Siwt21_checkCurrentColor block="checkCurrentColor|color %color" 
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -423,7 +423,7 @@ namespace Siwt2.1_传感器类 {
         }
         return (color == t);
     }
-    //% blockId=Siwt2.1_Voice_Sensor block="Voice_Sensor|value %value|声音"
+    //% blockId=Siwt21_Voice_Sensor block="Voice_Sensor|value %value|声音"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -439,7 +439,7 @@ namespace Siwt2.1_传感器类 {
             return false;
         }
     }
-	//% blockId=Siwt2.1_Key_Sensor block="Key_Sensor|value %value|按键"
+	//% blockId=Siwt21_Key_Sensor block="Key_Sensor|value %value|按键"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -453,7 +453,7 @@ namespace Siwt2.1_传感器类 {
             return true;
         }
     }
-    //% blockId=Siwt2.1_Incline_Sensor block="Incline_Sensor|%value|倾斜"
+    //% blockId=Siwt21_Incline_Sensor block="Incline_Sensor|%value|倾斜"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -467,7 +467,7 @@ namespace Siwt2.1_传感器类 {
             return false;
         }
     }
-    //% blockId=Siwt2.1_Smog_Sensor block="Smog_Sensor|%value|烟雾"
+    //% blockId=Siwt21_Smog_Sensor block="Smog_Sensor|%value|烟雾"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -482,7 +482,7 @@ namespace Siwt2.1_传感器类 {
             return false;
         }
     }
-    //% blockId=Siwt2.1_Humidity_Sensor block="Humidity_Sensor|土壤湿度|%value"
+    //% blockId=Siwt21_Humidity_Sensor block="Humidity_Sensor|土壤湿度|%value"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -496,7 +496,7 @@ namespace Siwt2.1_传感器类 {
             return true;
         }
     }
-    //% blockId=Siwt2.1_Touch_Sensor block="Touch_Sensor|%value|触摸"
+    //% blockId=Siwt21_Touch_Sensor block="Touch_Sensor|%value|触摸"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -510,7 +510,7 @@ namespace Siwt2.1_传感器类 {
             return true;
         }
     }
-    //% blockId=Siwt2.1_Photosensitive_Sensor block="Photosensitive_Sensor|%value|光照"
+    //% blockId=Siwt21_Photosensitive_Sensor block="Photosensitive_Sensor|%value|光照"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -526,7 +526,7 @@ namespace Siwt2.1_传感器类 {
             return false;
         }
     }
-    //% blockId=Siwt2.1_Flame_Sensor block="Flame_Sensor|%value|火焰"
+    //% blockId=Siwt21_Flame_Sensor block="Flame_Sensor|%value|火焰"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -548,7 +548,7 @@ namespace Siwt2.1_传感器类 {
             control.waitMicros(13);
         }
     }
-    //% blockId=Siwt2.1_IR_Sensor block="IR_Sensor|%value|障碍物"
+    //% blockId=Siwt21_IR_Sensor block="IR_Sensor|%value|障碍物"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -563,7 +563,7 @@ namespace Siwt2.1_传感器类 {
             return false;
         }
     }
-    //% blockId=Siwt2.1_IR_Send block="IR_Send|pin %pin"
+    //% blockId=Siwt21_IR_Send block="IR_Send|pin %pin"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -578,14 +578,14 @@ namespace Siwt2.1_传感器类 {
  ****************************************************************************************************************************************/
 
 //% color="#D2691E" weight=22 icon="\uf001"
-namespace Siwt2.1_音乐类 {
+namespace Siwt21_音乐类 {
     export enum enBuzzer {
         //% blockId="NoBeep" block="不响"
         NoBeep = 0,
         //% blockId="Beep" block="响"
         Beep
     }
-    //% blockId=Siwt2.1_BluetoothMusic block="BluetoothMusic|%uartData"
+    //% blockId=Siwt21_BluetoothMusic block="BluetoothMusic|%uartData"
     //% weight=92
     //% blockGap=10
     //% color="#D2691E"
@@ -622,7 +622,7 @@ namespace Siwt2.1_音乐类 {
 			  
         }
     }
-    //% blockId=Siwt2.1_Buzzer block="Buzzer"
+    //% blockId=Siwt21_Buzzer block="Buzzer"
     //% weight=100
     //% blockGap=10 
     //% color="#D2691E"
@@ -640,8 +640,8 @@ namespace Siwt2.1_音乐类 {
 
 //% color="#0000CD" weight=21 icon="\uf185"
 
-namespace Siwt2.1_电机类 {
-    //% blockId=Siwt2.1_Vibrator_Open block="Vibrator_Open"
+namespace Siwt21_电机类 {
+    //% blockId=Siwt21_Vibrator_Open block="Vibrator_Open"
     //% weight=100
     //% blockGap=10
     //% color="#0000CD"
@@ -650,7 +650,7 @@ namespace Siwt2.1_电机类 {
     export function Vibrator_Open(): void {
         pins.digitalWritePin(DigitalPin.P12, 1);
     }
-    //% blockId=Siwt2.1_Vibrator_Close block="Vibrator_Close"
+    //% blockId=Siwt21_Vibrator_Close block="Vibrator_Close"
     //% weight=100
     //% blockGap=10
     //% color="#0000CD"
@@ -662,7 +662,7 @@ namespace Siwt2.1_电机类 {
 }
 
 //% color="#006400" weight=20 icon="\uf1b9"
-namespace Siwt2.1_小车类 {
+namespace Siwt21_小车类 {
     const PCA9685_ADD = 0x41
     const MODE1 = 0x00
     const MODE2 = 0x01
@@ -774,7 +774,7 @@ namespace Siwt2.1_小车类 {
 	//% blockId="Car_SpeedDown" block="减速"
 	Car_SpeedDown = 9
     }
-    //% blockId=Siwt2.1_BluetoothCarControl block="BluetoothCarControl|%uartData"
+    //% blockId=Siwt21_BluetoothCarControl block="BluetoothCarControl|%uartData"
     //% weight=92
     //% blockGap=10
     //% color="#006400"
@@ -796,7 +796,7 @@ namespace Siwt2.1_小车类 {
             CarCtrl(CarState.Car_SpeedDown)
         }
     }
-    //% blockId=Siwt2.1_BluetoothServoControl block="BluetoothServoControl|%uartData"
+    //% blockId=Siwt21_BluetoothServoControl block="BluetoothServoControl|%uartData"
     //% weight=92
     //% blockGap=10
     //% color="#006400"
@@ -831,7 +831,7 @@ namespace Siwt2.1_小车类 {
         }
        
     }
-    //% blockId=Siwt2.1_BluetoothModeSelect block="BluetoothModeSelect|%uartData"
+    //% blockId=Siwt21_BluetoothModeSelect block="BluetoothModeSelect|%uartData"
     //% weight=92
     //% blockGap=10
     //% color="#006400"
@@ -1025,7 +1025,7 @@ namespace Siwt2.1_小车类 {
 	    car_speed-=5;
     }
 	
-    //% blockId=Siwt2.1_ultrasonic_car block="ultrasonic return distance(cm)"
+    //% blockId=Siwt21_ultrasonic_car block="ultrasonic return distance(cm)"
     //% color="#006400"
     //% weight=98
     //% blockGap=10
@@ -1058,7 +1058,7 @@ namespace Siwt2.1_小车类 {
         //   let d = pins.pulseIn(DigitalPin.P15, PulseValue.High, 43200);
         //  return d / 58;
     }
-    //% blockId=Siwt2.1_Music_Car block="Music_Car|%index"
+    //% blockId=Siwt21_Music_Car block="Music_Car|%index"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
@@ -1087,7 +1087,7 @@ namespace Siwt2.1_小车类 {
             case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
         }
     }
-    //% blockId=Siwt2.1_Servo_Car block="Servo_Car|num %num|value %value |速度 %speed"
+    //% blockId=Siwt21_Servo_Car block="Servo_Car|num %num|value %value |速度 %speed"
     //% weight=96
     //% blockGap=10
     //% speed.min=1 speed.max=10
@@ -1136,7 +1136,7 @@ namespace Siwt2.1_小车类 {
         else if (num == 3) { value3_past = value; }
         else if (num == 4) { value4_past = value; }
     }
-    //% blockId=Siwt2.1_Avoid_Sensor block="Avoid_Sensor|value %value"
+    //% blockId=Siwt21_Avoid_Sensor block="Avoid_Sensor|value %value"
     //% weight=95
     //% blockGap=10
     //% color="#006400"
@@ -1169,7 +1169,7 @@ namespace Siwt2.1_小车类 {
         }
         return temp;
     }
-    //% blockId=Siwt2.1_Line_Sensor block="Line_Sensor|direct %direct|value %value"
+    //% blockId=Siwt21_Line_Sensor block="Line_Sensor|direct %direct|value %value"
     //% weight=94
     //% blockGap=10
     //% color="#006400"
@@ -1206,7 +1206,7 @@ namespace Siwt2.1_小车类 {
         }
         return temp;
     }
-    //% blockId=Siwt2.1_CarCtrl block="CarCtrl|%index"
+    //% blockId=Siwt21_CarCtrl block="CarCtrl|%index"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
@@ -1224,7 +1224,7 @@ namespace Siwt2.1_小车类 {
             case CarState.Car_SpeedDown: Car_SpeedDown(); break;
         }
     }
-    //% blockId=Siwt2.1_CarCtrlSpeed block="CarCtrlSpeed|%index|speed %speed"
+    //% blockId=Siwt21_CarCtrlSpeed block="CarCtrlSpeed|%index|speed %speed"
     //% weight=92
     //% blockGap=10
     //% speed.min=0 speed.max=255
@@ -1241,7 +1241,7 @@ namespace Siwt2.1_小车类 {
             case CarState.Car_SpinRight: Car_spinright(speed); break;
         }
     }
-    //% blockId=Siwt2.1_MotorRun block="MotorRun|%index0|%index1|speed%speed"
+    //% blockId=Siwt21_MotorRun block="MotorRun|%index0|%index1|speed%speed"
     //% weight=93
     //% blockGap=10
     //% speed.min=0 speed.max=255
