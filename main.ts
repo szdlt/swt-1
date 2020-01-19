@@ -1,7 +1,5 @@
-/*  2019.1115.18:43
-modified from duncan
-load dependency
-"Siwt21": "file:../pxt-Siwt21"
+/*  2020.0119.11:13
+   Add SiwtInint Model building block in 显示类
 */
 //% color="#C814B8" weight=25 icon="\uf1d4"
 namespace Siwt21_显示类 {
@@ -90,6 +88,10 @@ namespace Siwt21_显示类 {
     //% weight=86 blockGap=50 blockId=clearLight block="Clear light"
     export function clearLight() {
         lhRGBLight.clear();
+    }
+    //% weight=88 blockId=SiwtInit block="初始化2.1主扩展板"
+    export function SiwtInit(){
+	    led.enable(false)	
     }
 }
 
