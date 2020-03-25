@@ -1,4 +1,4 @@
-/*  2020.0119.11:13
+/*  2020.0325.12:12
    Add SiwtInint Model building block in 显示类
 */
 //% color="#C814B8" weight=25 icon="\uf1d4"
@@ -93,6 +93,7 @@ namespace Siwt21_显示类 {
     export function SiwtInit(){
 	    led.enable(false)	
     }
+	
 }
 
 //% color="#87CEEB" weight=24 icon="\uf1b6"
@@ -839,19 +840,19 @@ namespace Siwt21_小车类 {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function BluetoothModeSelect(uartData: string): number {
-        if (uartData == "*CM0") {
+        if (uartData.indexOf("*CM0")!= -1) {
             g_mode = 1
             return CarRunState.Car_XunJi
-        } else if (uartData == "*CM1") {
+        } else if (uartData.indexOf("*CM1")!= -1) {
             g_mode = 2
             return CarRunState.Car_BiZhang
-        } else if (uartData == "*CM9") {
+        } else if (uartData.indexOf("*CM9")!= -1) {
             g_mode = 0
             return CarRunState.Car_Normal
         }
         else {
-            g_mode = 0
-            return CarRunState.Car_Normal
+              g_mode = 0
+              return CarRunState.Car_Normal
         }
     }
     function i2cwrite_(addr: number, reg: number, value: number) {
