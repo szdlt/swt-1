@@ -743,7 +743,9 @@ namespace Siwt21_小车类 {
         //% blockId="Car_XunJi" block="寻迹"
         Car_XunJi = 1,
         //% blockId="Car_BiZhang" block="避障"  
-        Car_BiZhang = 2
+        Car_BiZhang = 2，
+		//% blockId="Car_Sensor" block="传感器"  
+        Car_Sensor = 3
     }
     export enum MotorNum {
         //% blockId="Motor0" block="电机1"
@@ -846,6 +848,9 @@ namespace Siwt21_小车类 {
         } else if (uartData.indexOf("*CM1")!= -1) {
             g_mode = 2
             return CarRunState.Car_BiZhang
+        } else if (uartData.indexOf("*CM2")!= -1) {
+            g_mode = 3
+            return CarRunState.Car_Sensor
         } else if (uartData.indexOf("*CM9")!= -1) {
             g_mode = 0
             return CarRunState.Car_Normal
