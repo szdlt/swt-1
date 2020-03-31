@@ -743,8 +743,8 @@ namespace Siwt21_小车类 {
         //% blockId="Car_XunJi" block="寻迹"
         Car_XunJi = 1,
         //% blockId="Car_BiZhang" block="避障"  
-        Car_BiZhang = 2，
-		//% blockId="Car_Sensor" block="传感器"  
+        Car_BiZhang = 2,
+	//% blockId="Car_Sensor" block="传感器"  
         Car_Sensor = 3
     }
     export enum MotorNum {
