@@ -743,8 +743,8 @@ namespace Siwt21_小车类 {
         //% blockId="Car_XunJi" block="寻迹"
         Car_XunJi = 1,
         //% blockId="Car_BiZhang" block="避障"  
-        Car_BiZhang = 2,
-	//% blockId="Car_Sensor" block="传感器"  
+        Car_BiZhang = 2，
+		//% blockId="Car_Sensor" block="传感器"  
         Car_Sensor = 3
     }
     export enum MotorNum {
@@ -785,9 +785,9 @@ namespace Siwt21_小车类 {
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function BluetoothCarControl(uartData: string): void {
-        if (uartData == "*CB") {
+        if (uartData == "*CA") {
             CarCtrl(CarState.Car_Run)
-        } else if (uartData == "*CA") {
+        } else if (uartData == "*CB") {
             CarCtrl(CarState.Car_Back)
         } else if (uartData == "*CC") {
             CarCtrl(CarState.Car_SpinLeft)
