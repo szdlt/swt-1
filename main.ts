@@ -1,4 +1,4 @@
-/*  2020.0325.12:12
+/*  2020.0425.16:33
    Add SiwtInint Model building block in 显示类
 */
 //% color="#C814B8" weight=25 icon="\uf1d4"
@@ -691,6 +691,7 @@ namespace Siwt21_小车类 {
     let value5_past = -1
     let value6_past = -1
     let car_speed = 200
+	let left_right = 0
     export enum enMusic {
         dadadum = 0,
         entertainer,
@@ -923,11 +924,7 @@ namespace Siwt21_小车类 {
         setPwm(13, 0, 0);
         setPwm(15, 0, speed);
         setPwm(14, 0, 0);
-        //pins.digitalWritePin(DigitalPin.P16, 1);
-        // pins.analogWritePin(AnalogPin.P1, 1023-speed); //速度控制
-
-        // pins.analogWritePin(AnalogPin.P0, speed);//速度控制
-        // pins.digitalWritePin(DigitalPin.P8, 0);
+       
     }
     function Car_back(speed: number) {
         speed = speed * 16; // map 350 to 4096
@@ -941,10 +938,7 @@ namespace Siwt21_小车类 {
         setPwm(13, 0, speed);
         setPwm(15, 0, 0);
         setPwm(14, 0, speed);
-        //pins.digitalWritePin(DigitalPin.P16, 0);
-        //pins.analogWritePin(AnalogPin.P1, speed); //速度控制
-        //pins.analogWritePin(AnalogPin.P0, 1023 - speed);//速度控制
-        //pins.digitalWritePin(DigitalPin.P8, 1);
+       
     }
     function Car_left(speed: number) {
         speed = speed * 16; // map 350 to 4096
@@ -954,14 +948,22 @@ namespace Siwt21_小车类 {
         if (speed <= 350 && speed != 0) {
             speed = 350
         }
-        setPwm(12, 0, 0);
-        setPwm(13, 0, 0);
-        setPwm(15, 0, speed);
-        setPwm(14, 0, 0);
-        //pins.analogWritePin(AnalogPin.P0, speed);
-        //pins.digitalWritePin(DigitalPin.P8, 0);
-        //pins.digitalWritePin(DigitalPin.P16, 0);
-        //pins.digitalWritePin(DigitalPin.P1, 0);
+		if(left_right == 1){
+			
+			setPwm(12, 0, speed);
+			setPwm(13, 0, 0);
+			setPwm(15, 0, 0);
+			setPwm(14, 0, 0);
+			
+		}
+		
+		else {
+				setPwm(12, 0, 0);
+				setPwm(13, 0, 0);
+				setPwm(15, 0, speed);
+				setPwm(14, 0, 0);
+		     }
+        
     }
     function Car_right(speed: number) {
         speed = speed * 16; // map 350 to 4096
@@ -971,24 +973,28 @@ namespace Siwt21_小车类 {
         if (speed <= 350 && speed != 0) {
             speed = 350
         }
-        setPwm(12, 0, speed);
-        setPwm(13, 0, 0);
-        setPwm(15, 0, 0);
-        setPwm(14, 0, 0);
-        //pins.digitalWritePin(DigitalPin.P0, 0);
-        //pins.digitalWritePin(DigitalPin.P8, 0);
-        //pins.digitalWritePin(DigitalPin.P16, 1);
-        // pins.analogWritePin(AnalogPin.P1, 1023 - speed);
+		
+		if(left_right == 1){
+		
+			setPwm(12, 0, 0);
+			setPwm(13, 0, 0);
+			setPwm(15, 0, speed);
+			setPwm(14, 0, 0);
+				
+		}else{
+				setPwm(12, 0, speed);
+				setPwm(13, 0, 0);
+				setPwm(15, 0, 0);
+				setPwm(14, 0, 0);
+		   }
+        
     }
     function Car_stop() {
         setPwm(12, 0, 0);
         setPwm(13, 0, 0);
         setPwm(15, 0, 0);
         setPwm(14, 0, 0);
-        //pins.digitalWritePin(DigitalPin.P0, 0);
-        //pins.digitalWritePin(DigitalPin.P8, 0);
-        //pins.digitalWritePin(DigitalPin.P16, 0);
-        //pins.digitalWritePin(DigitalPin.P1, 0);
+       
     }
     function Car_spinleft(speed: number) {
         speed = speed * 16; // map 350 to 4096
@@ -998,14 +1004,21 @@ namespace Siwt21_小车类 {
         if (speed <= 350 && speed != 0) {
             speed = 350
         }
-        setPwm(12, 0, 0);
-        setPwm(13, 0, speed);
-        setPwm(15, 0, speed);
-        setPwm(14, 0, 0);
-        //pins.analogWritePin(AnalogPin.P0, speed);
-        //pins.digitalWritePin(DigitalPin.P8, 0);
-        //pins.digitalWritePin(DigitalPin.P16, 0);
-        //pins.analogWritePin(AnalogPin.P1, speed);
+		if(left_right == 1)
+		  {
+			setPwm(12, 0, speed);
+			setPwm(13, 0, 0);
+			setPwm(15, 0, 0);
+			setPwm(14, 0, speed);
+			
+		  }
+		 else{
+				setPwm(12, 0, 0);
+				setPwm(13, 0, speed);
+				setPwm(15, 0, speed);
+				setPwm(14, 0, 0);
+		 }
+        
     }
     function Car_spinright(speed: number) {
         speed = speed * 16; // map 350 to 4096
@@ -1015,22 +1028,30 @@ namespace Siwt21_小车类 {
         if (speed <= 350 && speed != 0) {
             speed = 350
         }
-        setPwm(12, 0, speed);
-        setPwm(13, 0, 0);
-        setPwm(15, 0, 0);
-        setPwm(14, 0, speed);
-        //pins.analogWritePin(AnalogPin.P0, 1023-speed);
-        //pins.digitalWritePin(DigitalPin.P8, 1);
-        //pins.digitalWritePin(DigitalPin.P16, 1);
-        //pins.analogWritePin(AnalogPin.P1, 1023-speed);
+		if(left_right == 1)
+		{
+			setPwm(12, 0, 0);
+			setPwm(13, 0, speed);
+			setPwm(15, 0, speed);
+			setPwm(14, 0, 0);
+				
+		}
+	    else
+		{
+			setPwm(12, 0, speed);
+			setPwm(13, 0, 0);
+			setPwm(15, 0, 0);
+			setPwm(14, 0, speed);
+		}
+     
     }
 	function Car_SpeedUp() {
         if(car_speed <= 250)
-	   car_speed+=5;
+	    car_speed+=20;
     }
 	function Car_SpeedDown() {
          if(car_speed >= 50)
-	    car_speed-=5;
+	    car_speed-=20;
     }
 	
     //% blockId=Siwt21_ultrasonic_car block="ultrasonic return distance(cm)"
@@ -1095,6 +1116,13 @@ namespace Siwt21_小车类 {
             case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
         }
     }
+	
+	//% weight=96 blockId=left2right block="设置大功率电机模式"
+    export function left2right(): void {
+	
+	           left_right = 1
+	
+	}
     //% blockId=Siwt21_Servo_Car block="Servo_Car|num %num|value %value |速度 %speed"
     //% weight=96
     //% blockGap=10
