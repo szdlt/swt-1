@@ -1,4 +1,4 @@
-/*  2020.0425.16:33
+/*  2020.0325.12:12
    Add SiwtInint Model building block in 显示类
 */
 //% color="#C814B8" weight=25 icon="\uf1d4"
@@ -920,11 +920,18 @@ namespace Siwt21_小车类 {
         if (speed <= 350) {
             speed = 350
         }
-        setPwm(12, 0, speed);
-        setPwm(13, 0, 0);
-        setPwm(15, 0, speed);
-        setPwm(14, 0, 0);
-       
+		if(left_right == 1){
+		    setPwm(12, 0, 0);
+			setPwm(13, 0, speed);
+			setPwm(15, 0, 0);
+			setPwm(14, 0, speed);
+		}
+		else {
+			setPwm(12, 0, speed);
+			setPwm(13, 0, 0);
+			setPwm(15, 0, speed);
+			setPwm(14, 0, 0);
+		}
     }
     function Car_back(speed: number) {
         speed = speed * 16; // map 350 to 4096
@@ -934,11 +941,18 @@ namespace Siwt21_小车类 {
         if (speed <= 350 && speed != 0) {
             speed = 350
         }
-        setPwm(12, 0, 0);
-        setPwm(13, 0, speed);
-        setPwm(15, 0, 0);
-        setPwm(14, 0, speed);
-       
+		if(left_right == 1){
+		    setPwm(12, 0, speed);
+			setPwm(13, 0, 0);
+			setPwm(15, 0, speed);
+			setPwm(14, 0, 0);
+		}
+		else {
+			setPwm(12, 0, 0);
+			setPwm(13, 0, speed);
+			setPwm(15, 0, 0);
+			setPwm(14, 0, speed);
+		}
     }
     function Car_left(speed: number) {
         speed = speed * 16; // map 350 to 4096
