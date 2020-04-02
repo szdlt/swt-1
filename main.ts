@@ -10,7 +10,7 @@ namespace Siwt21_显示类 {
         if (!lhRGBLight) {
             lhRGBLight = SiwtRGBLight.create(DigitalPin.P16, 4, SiwtRGBPixelMode.RGB);	
         }
-        clearLight();
+        clearLight(); 
     }
     //% blockId=Siwt21_SevenColorLED block="SevenColorLED|%uartData"
     //% weight=93
@@ -1060,11 +1060,11 @@ namespace Siwt21_小车类 {
      
     }
 	function Car_SpeedUp() {
-        if(car_speed <= 250)
+        if(car_speed <= 230)
 	    car_speed+=20;
     }
 	function Car_SpeedDown() {
-         if(car_speed >= 50)
+         if(car_speed >= 60)
 	    car_speed-=20;
     }
 	
